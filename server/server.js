@@ -77,6 +77,7 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://demomongo:passwordemo123@cluster0.bvy1owa.mongodb.net/";
+console.log(MONGO_URI)
 
 app.use(cors());
 app.use(express.json());
