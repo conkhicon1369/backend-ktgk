@@ -16,12 +16,9 @@ app.use(express.json());
 // Connect MongoDB
 const mongoURI = process.env.MONGO_URI || 'mongodb+srv://demomongo:passworddemo@cluster0.bvy1owa.mongodb.net/tour_management?retryWrites=true&w=majority';
 
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('✅ MongoDB connected: tour_management'))
-.catch(err => console.error('❌ MongoDB connection error:', err));
+mongoose.connect(mongoURI)
+  .then(() => console.log('✅ MongoDB connected: tour_management'))
+  .catch(err => console.error('❌ MongoDB connection error:', err));
 
 // Routes
 app.use('/api/tours', tourRoutes);
